@@ -39,7 +39,11 @@ var bicCodes = { "ADCBAEAAXXX" : ["ABU DHABI COMMERCIAL BANK", "UAE"],
                 "BUKBGB22" : ["BARCLAYS BANK PLC RE BUK", "UK"], "BSCHBRSPSPO" : ["BANCO SANTANDER (BRASIL) S.A.", "Brazil"], 
                 "BARCGB71XXX" : ["BARCLAYS BANK PLC", "United Kingdom"], "BARCGB22XXX" : ["BARCLAYS BANK PLC", "United Kingdom"], 
                 "MIDLGB2111F" : ["HSBC BANK PLC", "United Kingdom"], "HBUKGB4BXXX" : ["HSBC BANK PLC", "United Kingdom"],
-                "NWBKGB2LXXX" : ["National Westminster Bank PLC", "UK"] }
+                "NWBKGB2LXXX" : ["National Westminster Bank PLC", "UK"], "NATXFRPP" : ["NATIXIS", "France"],
+                "DEUTDEBB" : ["DEUTSCHE BANK AG", "Germany"], "DEUTGB2L" : ["DEUTSCHE BANK AG", "United Kingdom"],
+                "TOTAPTPL" : ["BANCO SANTANDER TOTTA, SA", "Portugal"], "BMSXMXMM" : ["BANCO SANTANDER (MEXICO), S.A.", "Mexico"],
+                "BOFAUS3N" : ["Bank of America", "USA"], "BOFAUS6S" : ["Bank of America", "USA"],
+                "SCBLGB2LXXX" : ["STANDARD CHARTERED BANK", "United Kingdom"] };
 
 
 var originator = document.querySelector("#STR_EIM__TransactionSummaryOriginator__EIM__Originator_Details_Static_1 > table > tbody > tr:nth-child(1) > td > span.pairRight.fieldspan_EIM__Originator_Name_1").innerText;
