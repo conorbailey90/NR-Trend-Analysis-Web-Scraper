@@ -60,16 +60,6 @@ function createTable(){
     var jsonData = JSON.parse(data);
     console.log(jsonData);
 
-
-    // var data = [{
-    //     'Date' : '',
-    //     'Alert Number' : '',
-    //     'Originator' : '',
-    //     'Originator Country' : '',
-    //     'Ordering institution' : '',
-    //     'Beneficiary Bank Country' : '',
-    //     'Ordering institution' : '',
-    // }];
     var table = document.querySelector('.trend-analysis');
 
     var col = [];
@@ -128,13 +118,4 @@ function copyTable(){
         document.querySelector('#temp_element').remove();
     } 
 }
-
-[
-    {
-        "Name" : "Conor",
-        "Age" : "29",
-        "Mobile" : "07540809644"
-    }
-
-]
 
