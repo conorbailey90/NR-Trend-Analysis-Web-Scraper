@@ -6,6 +6,30 @@ TAObj['Scenario'] = scenario;
 window.name = JSON.stringify(TAObj);
 
 
+var trow = document.querySelector("body > table > tbody > tr:nth-child(2)")
+trow.select()
+
+copy(trow.innerText)
+  var textarea = document.createElement('textarea')
+  textarea.id = 'temp_element'
+  // Optional step to make less noise on the page, if any!
+  textarea.style.height = 0
+  // Now append it to your page somewhere, I chose <body>
+  document.body.appendChild(textarea)
+  // Give our textarea a value of whatever inside the div of id=containerid
+  textarea.value = document.getElementById(containerid).innerText
+  // Now copy whatever inside the textarea to clipboard
+  var selector = document.querySelector('#temp_element')
+  selector.select()
+  document.execCommand('copy')
+  // Remove the textarea
+  document
+
+
+
+
+
+
 
 var TAObj =  JSON.parse(window.name);
 dataList = []
@@ -25,9 +49,8 @@ var beneficiaryBank = document.querySelector("#STR_EIM__TransactionSummaryBenefi
 TAObj['Beneficiary Bank'] = beneficiaryBank;
 dataList.push (TAObj);
 },1000);
-with ({ copy }) { setTimeout(() => copy(dataList), 6000) }
+with ({ copy }) { setTimeout(() => copy(dataList), 2000) }
 
 setTimeout(function(){
-alert('Completed')
+console.log('Completed')
 },2000);
-
