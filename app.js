@@ -1,16 +1,31 @@
+
+// Selectors
 copyOne = document.querySelector('.copy-one');
 copyTwo = document.querySelector('.copy-two');
 // createTableBtn = document.querySelector('.create-table');
 clearBtn = document.querySelector('.clear');
 jsonInput = document.querySelector('.json-input');
+copyTableBtn = document.querySelector('.copy-table');
 
+
+// Event Listeners
 copyOne.addEventListener('click', codeOne);
+
 copyTwo.addEventListener('click', codeTwo);
+
 // createTableBtn.addEventListener('click', createTable);
+
 clearBtn.addEventListener('click', clearData);
+
 jsonInput.addEventListener('paste', (e)=>{
     setTimeout(createTable,500);
-})
+    copyTableBtn.style.opacity = 1;
+});
+
+copyTableBtn.addEventListener('click', copyTable);
+
+
+
 
 function codeOne() {
     var data = document.querySelector('.code-one').textContent;
@@ -88,9 +103,30 @@ function createTable(){
 function clearData(){
     document.querySelector('.json-input').value = '';
     var table = document.querySelector('.trend-analysis');
-    table.innerHTML= ''
-    
-    
+    table.innerHTML= '';
+    copyTableBtn.style.opacity = 0.2;
+
+}
+
+
+function copyTable(){
+    try{
+        var textarea = document.createElement('textarea');
+        textarea.id = 'temp_element';
+        textarea.style.height = 0;
+        document.body.appendChild(textarea);
+        textarea.value = document.querySelector("body > div.table-container > table > tbody > tr:nth-child(2)").innerText;
+        var selector = document.querySelector('#temp_element');
+        selector.select();
+        document.execCommand('copy');
+        document.querySelector('#temp_element').remove();
+        alert('Table row copied to clipboard.')
+    }
+    catch(error){
+        console.log(error);
+        alert('No table data to copy.')
+        document.querySelector('#temp_element').remove();
+    } 
 }
 
 [
@@ -98,11 +134,6 @@ function clearData(){
         "Name" : "Conor",
         "Age" : "29",
         "Mobile" : "07540809644"
-    },
-    {
-        "Name" : "Natacha",
-        "Age" : "27",
-        "Mobile" : "0754065656"
     }
 
 ]
