@@ -118,9 +118,6 @@ body{
     left: 1rem;
 }
 
-.gist-meta{
-    display: none;
-}
 
 .trend-analysis{
     width: 80%;
@@ -142,7 +139,6 @@ th{
     background: rgb(1, 51, 85);
     color: #FFF;
 }
-
 
 
 .copy-table{
