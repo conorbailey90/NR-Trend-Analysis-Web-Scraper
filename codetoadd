@@ -1,0 +1,33 @@
+var TAObj = { "Date of Completion" : "", "Alert Number" : "", "Originator" : "", "OC Country" : "", "Originating Bank" : "", "OB Country" : "", "Locations Differ" : "No", "Intermediary 1" : "", "Int1 Country" : "", "Intermediary 2" : "", "Int 2 Country" : "", "Beneficiary Bank" : "", "BB Country" : "", "Beneficiary" : "", "BC Country" : "", "Locations Differ 2" : "", "Santander Customer Involvement" : "", "Outcome" : "Close", "Date SAR Submitted" : "", "SAR Acknowledgement" : "", "Scenario" : ""}
+var alertNumber = document.querySelector("#main-content").innerText.slice(38,53);
+TAObj['Alert Number'] = alertNumber;
+var scenario = document.querySelector("#AMLCB__SMAlertDetectionDetailsrow0 > td.cell_AMLCB__DetectionList_ScenarioName_RO").innerText;
+TAObj['Scenario'] = scenario;
+window.name = JSON.stringify(TAObj);
+
+
+
+var TAObj =  JSON.parse(window.name);
+dataList = []
+var originator = document.querySelector("#STR_EIM__TransactionSummaryOriginator__EIM__Originator_Details_Static_1 > table > tbody > tr:nth-child(1) > td > span.pairRight.fieldspan_EIM__Originator_Name_1").innerText;
+TAObj['Originator'] = originator
+
+var originatingBank = document.querySelector("#STR_EIM__TransactionSummaryOriginator__EIM__Originator_AccountDetails_Static_1 > table > tbody > tr:nth-child(2) > td > span.pairRight.fieldspan_EIM__Originator_AccountBIC_1").innerText;
+TAObj['Originating Bank'] = originatingBank;
+var beneLink = document.querySelector("#STR_EIM__TransactionSummaryBeneficiarytab");
+setTimeout(function(){
+    beneLink.click();
+},500);
+setTimeout(function(){
+var beneficiary = document.querySelector("#STR_EIM__TransactionSummaryBeneficiary__EIM__Beneficiary_Details_Static_1 > table > tbody > tr:nth-child(1) > td > span.pairRight.fieldspan_EIM__Beneficiary_Name_1").innerText;
+TAObj['Beneficiary'] = beneficiary
+var beneficiaryBank = document.querySelector("#STR_EIM__TransactionSummaryBeneficiary__EIM__Beneficiary_AccountDetails_Static_1 > table > tbody > tr:nth-child(2) > td > span.pairRight.fieldspan_EIM__Beneficiary_AccountBIC_1").innerText;
+TAObj['Beneficiary Bank'] = beneficiaryBank;
+dataList.push (TAObj);
+},1000);
+with ({ copy }) { setTimeout(() => copy(dataList), 6000) }
+
+setTimeout(function(){
+alert('Completed')
+},2000);
+
