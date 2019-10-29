@@ -52,24 +52,42 @@
             <p>
                     var TAObj =  JSON.parse(window.name);
 
+ 
+
 dataList = [];
 
-var bicCodes = { "ADCBAEAAXXX" : ["ABU DHABI COMMERCIAL BANK", "UAE"], 
-                "ABBYGB2L" : ["Santander UK PLC", "United Kingdom"], "ABBYGB2LXXX" : ["Santander UK PLC", "United Kingdom"], 
-                "AKBKTRIS" : ["AKBANK T.A.S", "Turkey"], "LOYDGB21021" : ["LLOYDS BANK PLC", "United Kingdom"], 
-                "LOYDGB2LCTY" : ["LLOYDS BANK PLC", "United Kingdom"], "POFICHBEXXX" : ["POSTFINANCE AG" , "Switzerland"], 
-                "WBKPPLPPXXX" : ["SANTANDER BANK POLSKA S.A", "Poland"], "GDBKCN22XXX" : ["CHINA GUANGFA BANK CO., LTD", "China"], 
-                "BARCAEADXXX" : ["BARCLAYS BANK PLC", "UAE"], "RBOSGB2L" : ["ROYAL BANK OF SCOTLAND PLC", "United Kingdom"], 
-                "BUKBGB22" : ["BARCLAYS BANK PLC RE BUK", "UK"], "BSCHBRSPSPO" : ["BANCO SANTANDER (BRASIL) S.A.", "Brazil"], 
-                "BARCGB71XXX" : ["BARCLAYS BANK PLC", "United Kingdom"], "BARCGB22XXX" : ["BARCLAYS BANK PLC", "United Kingdom"], 
-                "MIDLGB2111F" : ["HSBC BANK PLC", "United Kingdom"], "HBUKGB4BXXX" : ["HSBC BANK PLC", "United Kingdom"],
+ 
+
+var bicCodes = { "TOTAPTPLXXX" : [" BANCO SANTANDER TOTTA, SA", "Portugal"], "ADCBAEAAXXX" : ["ABU DHABI COMMERCIAL BANK", "UAE"],
+                "ABBYGB2L" : ["Santander UK PLC", "UK"], "ABBYGB2LXXX" : ["Santander UK PLC", "UK"],
+                "AKBKTRIS" : ["AKBANK T.A.S", "Turkey"], "LOYDGB21021" : ["LLOYDS BANK PLC", "UK"],
+                "LOYDGB2LCTY" : ["LLOYDS BANK PLC", "UK"], "POFICHBEXXX" : ["POSTFINANCE AG" , "Switzerland"],
+                "WBKPPLPPXXX" : ["SANTANDER BANK POLSKA S.A", "Poland"], "GDBKCN22XXX" : ["CHINA GUANGFA BANK CO., LTD", "China"],
+                "BARCAEADXXX" : ["BARCLAYS BANK PLC", "UAE"], "RBOSGB2L" : ["ROYAL BANK OF SCOTLAND PLC", "UK"],
+                "BUKBGB22" : ["BARCLAYS BANK PLC RE BUK", "UK"], "BSCHBRSPSPO" : ["BANCO SANTANDER (BRASIL) S.A.", "Brazil"],
+                "BARCGB71XXX" : ["BARCLAYS BANK PLC", "UK"], "BARCGB22XXX" : ["BARCLAYS BANK PLC", "UK"],
+                "MIDLGB2111F" : ["HSBC BANK PLC", "UK"], "HBUKGB4BXXX" : ["HSBC BANK PLC", "UK"],
                 "NWBKGB2LXXX" : ["National Westminster Bank PLC", "UK"], "NATXFRPP" : ["NATIXIS", "France"],
-                "DEUTDEBB" : ["DEUTSCHE BANK AG", "Germany"], "DEUTGB2L" : ["DEUTSCHE BANK AG", "United Kingdom"],
+                "DEUTDEBB" : ["DEUTSCHE BANK AG", "Germany"], "DEUTGB2L" : ["DEUTSCHE BANK AG", "UK"],
                 "TOTAPTPL" : ["BANCO SANTANDER TOTTA, SA", "Portugal"], "BMSXMXMM" : ["BANCO SANTANDER (MEXICO), S.A.", "Mexico"],
                 "BOFAUS3N" : ["Bank of America", "USA"], "BOFAUS6S" : ["Bank of America", "USA"],
-                "SCBLGB2LXXX" : ["STANDARD CHARTERED BANK", "United Kingdom"] };
+                "SCBLGB2LXXX" : ["STANDARD CHARTERED BANK", "UK"], "ECOCTGTG" : ["ECOBANK TOGO" , "Togo"],
+                "PIRBCY2NXXX" : ["ASTROBANK LIMITED", "Cyprus"], "BUKBGB22XXX" : ["BARCLAYS BANK PLC", "UK"],
+                "ABBYGB2LANB" : ["SANTANDER UK PLC", "UK"], "GEBABEBB36A" : ["BNP PARIBAS FORTIS", "Belgium"],
+                "CITIGB2L" : ["CITIBANK N.A", "UK"], "WPACAU2SXXX" : ["Westpac Banking Corporation", "Australia"],
+                "NRAKAEAKXXX" : ["NATIONAL BANK OF RAS AL-KHAIMAH", "UAE"], "ABBYGB3EXXX" : ["Santander UK PLC", "UK"],
+                "BMSXMXMMXXX"  :["BANCO SANTANDER (MEXICO), S.A", "Mexico"], "CITIGB2LXXX" : ["CITIBANK N.A", "UK"],
+                "ABNANL2A" : ["ABN AMRO BANK N.V.", "Netherlands"], "ABBYGB3E" : ["Santander UK PLC", "UK"],
+                "BACMGB2LXXX" : ["BRITISH ARAB COMMERCIAL BANK PLC", "UK"], "CRESCHZFEFT" : ["CREDIT SUISSE (SCHWEIZ) AG", "Switzerland"],
+                "BSCHBRSPXXX" : ["BANCO SANTANDER (BRASIL) S.A.", "Brazil"], "ALEIGB22" : ["Santander UK PLC", "UK"],
+                "ALEIGB22XXX" : ["Santander UK PLC", "UK"], "COBADEFF" : ["COMMERZBANK AG", "Germany"],
+                "ABKKKWKWXXX" : ["ALAHLI BANK OF KUWAIT K.S.C", "Kuwait"], "COBADEFFXXX" : ["COMMERZBANK AG", "Germany"],
+                "BARCGB22" : ["Barclays Bank PLC", "UK"], "NRAKAEAK" : ["NATIONAL BANK OF RAS AL-KHAIMAH", "UAE"],
+                "ADCBAEAA" : ["ABU DHABI COMMERCIAL BANK", "UAE"], "TSBSGB2AXXX" : ["TSB BANK PLC", "UK"],
+                "BSCHESMMXXX" : ["BANCO SANTANDER S.A.", "Spain"], "LOYDGB21278" : ["LLOYDS BANK PLC", "UK"],
+                "MYMBGB2LXXX" : ["METRO BANK PLC", "UK"], "NWBKGB2L" : ["NATIONAL WESTMINSTER BANK PLC", "UK"] };
 
-
+ 
 var originator = document.querySelector("#STR_EIM__TransactionSummaryOriginator__EIM__Originator_Details_Static_1 > table > tbody > tr:nth-child(1) > td > span.pairRight.fieldspan_EIM__Originator_Name_1").innerText;
 
 TAObj['Originator'] = originator;
@@ -78,41 +96,64 @@ var originatorCountry = document.querySelector("#STR_EIM__TransactionSummaryOrig
 
 TAObj['OC Country'] = originatorCountry;
 
+if (TAObj['OC Country'] == 'United Kingdom'){
+
+    TAObj['OC Country'] = 'UK';
+
+}
+
 var originatingBank = document.querySelector("#STR_EIM__TransactionSummaryOriginator__EIM__Originator_AccountDetails_Static_1 > table > tbody > tr:nth-child(2) > td > span.pairRight.fieldspan_EIM__Originator_AccountBIC_1").innerText;
 
-if (originatingBank in bicCodes){
+ if (originatingBank in bicCodes){
     TAObj['Originating Bank'] = bicCodes[originatingBank][0];
     TAObj['OB Country'] = bicCodes[originatingBank][1];
-    TAObj['OC Country'] = (originatorCountry === "" ? bicCodes[originatingBank][1] : "" );
 }else{
     TAObj['Originating Bank'] = originatingBank;
 };
 
-var beneLink = document.querySelector("#STR_EIM__TransactionSummaryBeneficiarytab"); 
+ 
+
+if (originatingBank in bicCodes && TAObj['OC Country'].length < 3){
+    TAObj['OC Country'] = bicCodes[originatingBank][1]
+
+    }
+var beneLink = document.querySelector("#STR_EIM__TransactionSummaryBeneficiarytab");
 
 setTimeout(function(){
         beneLink.click();
     },500);
 
+setTimeout(function(){
 
-  setTimeout(function(){
         var beneficiary = document.querySelector("#STR_EIM__TransactionSummaryBeneficiary__EIM__Beneficiary_Details_Static_1 > table > tbody > tr:nth-child(1) > td > span.pairRight.fieldspan_EIM__Beneficiary_Name_1").innerText;
 
         TAObj['Beneficiary'] = beneficiary;
-
         var beneficiaryBank = document.querySelector("#STR_EIM__TransactionSummaryBeneficiary__EIM__Beneficiary_AccountDetails_Static_1 > table > tbody > tr:nth-child(2) > td > span.pairRight.fieldspan_EIM__Beneficiary_AccountBIC_1").innerText;
-        
         var beneficiaryCountry = document.querySelector("#STR_EIM__TransactionSummaryBeneficiary__EIM__Beneficiary_Details_Static_1 > table > tbody > tr:nth-child(6) > td > span.pairRight.fieldspan_EIM__Beneficiary_Country_1").innerText;
-
         TAObj['BC Country'] = beneficiaryCountry;
 
+        if (TAObj['BC Country'] == 'United Kingdom'){
+
+            TAObj['BC Country'] = 'UK';
+
+        }
+
         if (beneficiaryBank in bicCodes){
+
             TAObj['Beneficiary Bank'] = bicCodes[beneficiaryBank][0];
+
             TAObj['BB Country'] = bicCodes[beneficiaryBank][1];
-            TAObj['BC Country'] = (beneficiaryCountry === "" ? bicCodes[beneficiaryBank][1] : "" );
+
         }else{
+
             TAObj['Beneficiary Bank'] = beneficiaryBank;
+
         };
+        if (beneficiaryBank in bicCodes && TAObj['BC Country'].length < 3){
+
+            TAObj['BC Country'] = bicCodes[beneficiaryBank][1]
+
+         }
 
         TAObj['Locations Differ'] = (TAObj['OC Country'] == TAObj['OB Country'] ? "No" : "Yes");
 
@@ -121,17 +162,22 @@ setTimeout(function(){
         TAObj['Santander Customer Involvement'] = (TAObj['Originating Bank'] ==  "Santander UK PLC" ||  TAObj['Beneficiary Bank'] == "Santander UK PLC" ? "Yes" : "No");
 
         if (TAObj['Santander Customer Involvement'] == "No"){
+
             TAObj['Intermediary 1'] = "Santander UK PLC";
+
             TAObj['Int1 Country'] = "United Kingdom";
+
         }
 
         dataList.push (TAObj);
         },1000);
 
         with ({ copy }) { setTimeout(() => copy(dataList), 1500) };
-        
+
         setTimeout(function(){
+
         alert('Data copied to clipboard.')
+
         },1500);
 
         </p>
